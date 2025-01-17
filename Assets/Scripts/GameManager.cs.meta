@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6d5eec33447d44f4dbe21bba8a2d2f83
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - pauseMenu: {instanceID: 0}
+  - defeatMenu: {instanceID: 0}
+  - completionMenu: {instanceID: 0}
+  - groundMaterial: {fileID: 2100000, guid: d0cfc3957f2536a4582c698c24a21b8e, type: 2}
+  - skyMaterial: {fileID: 2100000, guid: bea179f1822ee3e4a913c13b282f16cb, type: 2}
+  - grassMaterial: {fileID: 2100000, guid: 6bd06d9eaafa83341a6042733f023006, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

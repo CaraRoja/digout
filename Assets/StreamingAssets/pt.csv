@@ -1,0 +1,21 @@
+Key,Translation
+CONTINUE,Continuar
+RESTART_LEVEL,Reiniciar fase
+SETTINGS,Configurar
+PAUSE,Pausado
+EXIT,Sair
+TRY_AGAIN,Tente Novamente
+BACK_TO_MENU,Voltar ao Menu
+DEFEAT_TEXT,Você foi forte
+DEFEAT_SUBTEXT,mas os desafios foram mais fortes dessa vez :(
+VICTORY_TEXT,Você venceu!
+VICTORY_SUBTEXT,I-isso é tudo por hoje pe-pe-pe-pessoal
+TUTORIAL_WALK,Andar
+TUTORIAL_JUMP,Pular
+TUTORIAL_MEDITATE,Meditar
+TUTORIAL_SOLVE,Resolver
+LANGUAGE,Idioma
+SOUND,Som
+SOUND_ON,Ligado
+SOUND_OFF,Desligado
+START,Iniciar

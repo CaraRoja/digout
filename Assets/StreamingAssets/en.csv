@@ -1,0 +1,21 @@
+Key,Translation
+CONTINUE,Continue
+RESTART_LEVEL,Restart Level
+SETTINGS,Settings
+PAUSE,Paused
+EXIT,Exit
+TRY_AGAIN,Try Again
+BACK_TO_MENU,Back to Menu
+DEFEAT_TEXT,You were strong
+DEFEAT_SUBTEXT,but the challenges were stronger this time :(
+VICTORY_TEXT,You won!
+VICTORY_SUBTEXT,T-that's all for today f-f-folks
+TUTORIAL_WALK,Walk
+TUTORIAL_JUMP,Jump
+TUTORIAL_MEDITATE,Meditate
+TUTORIAL_SOLVE,Solve
+LANGUAGE,Language
+SOUND,Sound
+SOUND_ON,On
+SOUND_OFF,Off
+START,Start
