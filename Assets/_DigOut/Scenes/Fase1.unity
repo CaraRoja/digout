@@ -8295,6 +8295,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3284811475814593993, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8509641859107331016, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
