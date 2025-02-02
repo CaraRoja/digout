@@ -12,7 +12,8 @@ public class SolveEnemy : MonoBehaviour
     public EnemyGauge enemyGauge;
     public PlayerSolve solvePlayer;
     //public List<EnemyGauge> enemyGauges;
-    public LayerMask enemyLayer;
+
+    public bool coroutineIsRunning = false;
 
     // Start is called before the first frame update
     void Start()
@@ -101,6 +102,8 @@ public class SolveEnemy : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(this.transform.parent.position, Vector3.right * transform.parent.localScale.x, 3f, LayerMask.GetMask("Enemy"));
 
+        RaycastHit2D hitMaterial = Physics2D.Raycast(this.transform.parent.position, Vector3.right * transform.parent.localScale.x, 3f, LayerMask.GetMask("FadeObstacle"));
+
         if (hit.collider != null)
         {
             if (hit.collider.CompareTag("Enemy") && solvePlayer.IsPlayerPressingSolveInput())
@@ -109,6 +112,27 @@ public class SolveEnemy : MonoBehaviour
                 DecreaseGaugeEnemy(hit.collider.gameObject.GetComponent<EnemyGauge>());
             }
         }
+
+        if (hitMaterial.collider != null) 
+        {
+            if (hitMaterial.collider.CompareTag("FadeObstacle") && solvePlayer.IsPlayerPressingSolveInput())
+            {
+                if (hitMaterial.collider.GetComponent<MaterialObjectHandler>().IsWorking() && !coroutineIsRunning)
+                {
+                    StartCoroutine(DelayIncreaseFadeObstacleValue(hitMaterial.collider.GetComponent<MaterialObjectHandler>()));
+                    Debug.Log("ENTROU");
+                }
+            }
+        }
+    }
+
+    public IEnumerator DelayIncreaseFadeObstacleValue(MaterialObjectHandler mat )
+    {
+        coroutineIsRunning = true;
+        mat.SetWorkingStatus(false);
+        yield return new WaitForSeconds(0.2f);
+        mat.SetWorkingStatus(true);
+        coroutineIsRunning = false;
     }
 
 }
