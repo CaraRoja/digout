@@ -13,6 +13,7 @@ TagManager:
   - SolveRange
   - Coin
   - EnemySolved
+  - FadeObstacle
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - Tutorial
   - platformLayer
   - groundLayer
-  - 
+  - FadeObstacle
   - 
   - 
   - 
