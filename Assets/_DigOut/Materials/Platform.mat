@@ -117,7 +117,11 @@ Material:
     - _Parallax: 0.02
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+<<<<<<< HEAD
     - _Saturation: 0.36914524
+=======
+    - _Saturation: 0.30232587
+>>>>>>> origin/main
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1

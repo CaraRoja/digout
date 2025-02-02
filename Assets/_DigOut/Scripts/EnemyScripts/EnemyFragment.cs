@@ -7,7 +7,7 @@ public class EnemyFragment : Enemy
     public int numberOfFragments = 2;
     public float currentScale = 1.0f;
     public float scaleDecrement = 0.25f;
-    public float minimumScale = 0.25f;
+    public float minimumScale = 0.5f;
     public float jumpForce = 2.5f; // Reduzi o valor da força de impulso
     public float multiplyCooldown = 1.5f; // Tempo de espera entre multiplicações
 
