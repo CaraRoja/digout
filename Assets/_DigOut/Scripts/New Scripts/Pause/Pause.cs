@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
@@ -22,55 +21,38 @@ public class Pause : MonoBehaviour
     void Update()
     {
         PauseGame();
-        UpdatePanels();
+        ChangePanels();
     }
 
     public void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused())
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            isPaused = true;
-            Time.timeScale = 0f;
-            SetEnumPanel(PausePanels.Pause);
-
+            if (!GetEnumPanel().Equals(PausePanels.Config))
+            {
+                isPaused = true;
+                Time.timeScale = 0f;
+                SetEnumPanel(PausePanels.Pause);
+            }
+            else if (GetEnumPanel().Equals(PausePanels.Config))
+            {
+                SetEnumPanel(PausePanels.Config);
+            }
+            
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Config))
-        {
+    }
 
-            SetEnumPanel(PausePanels.Pause);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Pause))
+    public void ResumeGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && GetEnumPanel().Equals(PausePanels.Pause))
         {
             isPaused = false;
             Time.timeScale = 1f;
-
         }
     }
 
-    public void ResumeGameByButton()
-    {
-        isPaused = false;
-        Time.timeScale = 1f;
-    }
-
-    public void RestartGameByButton()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
-
-    public void ReturnToMenuByButton()
-    {
-        SceneManager.LoadScene(0);
-    }
-
-    public void OpenConfigPanel()
-    {
-        SetEnumPanel(PausePanels.Config);
-    }
-
     //Muda os painéis da tela de pause
-    public void UpdatePanels()
+    public void ChangePanels()
     {
         if (IsPaused())
         {
@@ -89,8 +71,6 @@ public class Pause : MonoBehaviour
         else
         {
             HUD.SetActive(true);
-            PauseMenuPanel.SetActive(false);
-            ConfigPanel.SetActive(false);
         }
     }
 
