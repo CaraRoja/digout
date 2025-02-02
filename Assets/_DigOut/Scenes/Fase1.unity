@@ -919,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &183890795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6498,21 +6498,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1119006970288310441, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119006970288310441, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: volume
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
       propertyPath: m_Name
       value: enemyDistort (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8509641859107331016, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -6525,10 +6513,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1942110042}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
 --- !u!1 &1599709954
 GameObject:
@@ -8638,27 +8623,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &1942110034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-  m_PrefabInstance: {fileID: 1584636227}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1942110042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942110034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf9a4df5839bf441a048f89f9ce2c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gauge: 100
-  gaugeTime: 0.5
-  gaugeIsWorking: 1
-  IsDecreasing: 0
 --- !u!1 &1987938817
 GameObject:
   m_ObjectHideFlags: 0
@@ -9955,6 +9919,10 @@ PrefabInstance:
     - target: {fileID: 5525798112577263448, guid: d7fe298f76d1e6544ba84181f88e0b03, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571856020993079843, guid: d7fe298f76d1e6544ba84181f88e0b03, type: 3}
+      propertyPath: m_PointLightInnerRadius
+      value: 1.46
       objectReference: {fileID: 0}
     - target: {fileID: 5854684691053891881, guid: d7fe298f76d1e6544ba84181f88e0b03, type: 3}
       propertyPath: m_Layer

@@ -15,7 +15,8 @@ GameObject:
   - component: {fileID: 728972581167450143}
   - component: {fileID: 8509641859107331016}
   - component: {fileID: 5630577970080388590}
-  m_Layer: 0
+  - component: {fileID: 1868647003407465388}
+  m_Layer: 7
   m_Name: enemyDistort
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8519f47575c3ef5418b8dcdf37b03fd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 1
   coinLoss: 5
   solved: 0
   volume: {fileID: 0}
@@ -229,3 +230,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9992137, y: 2.851077}
   m_EdgeRadius: 0
+--- !u!114 &1868647003407465388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293550040676090371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cf9a4df5839bf441a048f89f9ce2c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gauge: 100
+  gaugeTime: 0.5
+  gaugeIsWorking: 1
+  IsDecreasing: 0
