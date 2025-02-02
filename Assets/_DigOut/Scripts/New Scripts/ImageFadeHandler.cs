@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class ImageFadeHandler : MonoBehaviour
 {
-    private GameManager game;
     public Image image;
     public Color color;
     public float alphaValue;
@@ -14,7 +13,7 @@ public class ImageFadeHandler : MonoBehaviour
 
     private void Awake()
     {
-        game = GameObject.Find("GameManager").GetComponent<GameManager>();
+
     }
     // Start is called before the first frame update
     void Start()
