@@ -1039,7 +1039,8 @@ PrefabInstance:
       propertyPath: m_Interpolate
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1868647003407465388, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -3248,7 +3249,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 886059898}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1868647003407465388, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -4436,7 +4438,8 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 1670402884}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1868647003407465388, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -6356,10 +6359,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1942110042}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
 --- !u!1 &1599709954
 GameObject:
@@ -7921,27 +7921,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: BACK_TO_MENU
---- !u!1 &1795230426 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-  m_PrefabInstance: {fileID: 1858020620}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1795230434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1795230426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf9a4df5839bf441a048f89f9ce2c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gauge: 100
-  gaugeTime: 0.5
-  gaugeIsWorking: 1
-  IsDecreasing: 0
 --- !u!1 &1817320050
 GameObject:
   m_ObjectHideFlags: 0
@@ -8279,25 +8258,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1119006970288310441, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: speed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1119006970288310441, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: volume
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
       propertyPath: m_Name
       value: enemyDistort (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3284811475814593993, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8509641859107331016, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -8310,10 +8273,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1795230434}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
 --- !u!212 &1883046385 stripped
 SpriteRenderer:
@@ -8540,27 +8500,6 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!1 &1942110034 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2293550040676090371, guid: 6cda4fc492b9ae14d9b2442d1d4baa96, type: 3}
-  m_PrefabInstance: {fileID: 1584636227}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1942110042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1942110034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cf9a4df5839bf441a048f89f9ce2c1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gauge: 100
-  gaugeTime: 0.5
-  gaugeIsWorking: 1
-  IsDecreasing: 0
 --- !u!1 &1987938817
 GameObject:
   m_ObjectHideFlags: 0

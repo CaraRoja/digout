@@ -169,8 +169,8 @@ public class EnemyDistort : Enemy
             renderer.material.SetColor("_CurrentColor", new Color(0.0f, 0.898f, 0.525f, 1.0f));
         }
 
-        if (chromaticAberration != null) chromaticAberration.active = false;
-        if (lensDistortion != null) lensDistortion.active = false;
+        //if (chromaticAberration != null) chromaticAberration.active = false;
+        //if (lensDistortion != null) lensDistortion.active = false;
 
         if (MusicManager.Instance != null)
         {
