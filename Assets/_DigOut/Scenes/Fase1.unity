@@ -5533,7 +5533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSaveSlot: 0
-  pauseMenu: {fileID: 1993224756}
+  pauseMenu: {fileID: 0}
   defeatMenu: {fileID: 1231547346}
   completionMenu: {fileID: 846475670}
   levelSelectionMenu: {fileID: 942617543}
