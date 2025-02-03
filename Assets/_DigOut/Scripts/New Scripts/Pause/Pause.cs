@@ -12,6 +12,7 @@ public class Pause : MonoBehaviour
     public PausePanels panels = PausePanels.Pause;
 
     public bool isPaused = false;
+    public bool canPause = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,25 +28,34 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused())
+        if (canPause)
         {
-            isPaused = true;
-            Time.timeScale = 0f;
-            SetEnumPanel(PausePanels.Pause);
+            if (Input.GetKeyDown(KeyCode.Escape) && !IsPaused())
+            {
+                isPaused = true;
+                Time.timeScale = 0f;
+                SetEnumPanel(PausePanels.Pause);
 
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Config))
+            {
+
+                SetEnumPanel(PausePanels.Pause);
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Pause))
+            {
+                isPaused = false;
+                Time.timeScale = 1f;
+
+            }
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Config))
-        {
+        
+    }
 
-            SetEnumPanel(PausePanels.Pause);
-
-        }
-        else if (Input.GetKeyDown(KeyCode.Escape) && IsPaused() && GetEnumPanel().Equals(PausePanels.Pause))
-        {
-            isPaused = false;
-            Time.timeScale = 1f;
-
-        }
+    public void DeactivatePause()
+    {
+        canPause = false;
     }
 
     public void ResumeGameByButton()
@@ -63,6 +73,7 @@ public class Pause : MonoBehaviour
     public void ReturnToMenuByButton()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1f;
     }
 
     public void OpenConfigPanel()

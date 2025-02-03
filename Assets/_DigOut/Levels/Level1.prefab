@@ -377,7 +377,6 @@ Transform:
   - {fileID: 3422504450962619660}
   - {fileID: 3102025258706877049}
   - {fileID: 8268442442675535465}
-  - {fileID: 2561869606016673723}
   m_Father: {fileID: 9077804789251805590}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2927879399812510618
@@ -946,13 +945,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6469325014645586141}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.13, y: 17.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.7628951, y: 0.78138447, z: 0.11505693}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2667190179910998074}
-  m_Father: {fileID: 4149658971347388252}
+  m_Father: {fileID: 5619301100141875768}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4007038426031665993
 MonoBehaviour:
@@ -966,6 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04546e3484f86f9488b1fbb146a48336, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completeLevel: {fileID: 0}
 --- !u!61 &3423064178978636616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4057,7 +4057,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8503154080288466316, guid: 802eb4fec911a1c4cb380ce7924996b3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2561869606016673723}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802eb4fec911a1c4cb380ce7924996b3, type: 3}
 --- !u!4 &5619301100141875768 stripped
@@ -5467,8 +5470,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cba5bbb53d23af4f81cac1707e20cd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0.3
-  frequency: 1
+  movementType: 0
+  amplitudeHV: 3
+  frequencyHV: 1
 --- !u!1001 &7329718634702265463
 PrefabInstance:
   m_ObjectHideFlags: 0

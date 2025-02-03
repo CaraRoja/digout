@@ -33,7 +33,7 @@ public class SoundToggle : MonoBehaviour
         }
     }
 
-    /*
+    
     public void ToggleSound()
     {
         if (SoundManager.Instance != null)
@@ -49,11 +49,13 @@ public class SoundToggle : MonoBehaviour
                 SoundManager.Instance.MuteAll();
             }
 
+            /*
             // Salva a configuração do som
             if (GameManager.Instance != null)
             {
                 GameManager.Instance.SetSoundState(isSoundOn);
             }
+            */
 
             UpdateSoundStatus();
         }
@@ -61,8 +63,36 @@ public class SoundToggle : MonoBehaviour
         {
             Debug.LogError("SoundManager instance is not set.");
         }
+
+        if (MusicManager.Instance != null)
+        {
+            isSoundOn = !isSoundOn;
+
+            if (isSoundOn)
+            {
+                MusicManager.Instance.UnmuteAll();
+            }
+            else
+            {
+                MusicManager.Instance.MuteAll();
+            }
+
+            /*
+            // Salva a configuração do som
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.SetSoundState(isSoundOn);
+            }
+            */
+
+            UpdateSoundStatus();
+        }
+        else
+        {
+            Debug.LogError("MusicManager instance is not set.");
+        }
     }
-    */
+    
 
     private void UpdateSoundStatus()
     {

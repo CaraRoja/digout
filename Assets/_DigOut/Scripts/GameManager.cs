@@ -87,23 +87,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (!hasCoins)
-        {
-            timeWithoutCoins += Time.deltaTime;
-            if (timeWithoutCoins >= 60f)
-            {
-                TriggerDefeatDueToNoCoins();
-            }
-
-            // Atualizar a transparência do fadeImage de acordo com o tempo sem moedas
-            float transparency = Mathf.Clamp01(timeWithoutCoins / 60f);
-            //FadeImageManager.Instance.SetTransparency(transparency);
-        }
-        else
-        {
-            timeWithoutCoins = 0f;
-            //FadeImageManager.Instance.SetTransparency(0f);
-        }
+        
     }
 
     public string GetLevelName()
@@ -136,7 +120,7 @@ public class GameManager : MonoBehaviour
     {
         currentSaveData.AddLevelData(completionTime, attempts, score, items, enemies, path);
         currentSaveData.Save(currentSaveSlot);
-        ShowVictoryMenu();
+        //ShowVictoryMenu();
     }
 
     public void PauseGame()
@@ -199,18 +183,7 @@ public class GameManager : MonoBehaviour
         LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void PlayerReachedEnd()
-    {
-        ShowVictoryMenu();
-    }
-
-    private void ShowVictoryMenu()
-    {
-        completionMenu.SetActive(true);
-        gameHUD.SetActive(false);
-        Time.timeScale = 0;
-        levelSelectionMenu.SetActive(true);
-    }
+    
 
     public void LoadMainMenu()
     {

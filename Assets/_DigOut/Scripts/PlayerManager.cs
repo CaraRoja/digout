@@ -44,7 +44,7 @@ public class PlayerManager : MonoBehaviour
 
     private void Update()
     {
-        CheckForFalls();
+        //CheckForFalls();
     }
 
     private void SetInitialPlayerStats()

@@ -43,7 +43,7 @@ public class LevelManager : MonoBehaviour
         if (player != null && levels[currentLevelIndex].endPoint != null &&
             Vector3.Distance(player.transform.position, levels[currentLevelIndex].endPoint.position) < completionDistance)
         {
-            GameManager.Instance.PlayerReachedEnd();
+            //GameManager.Instance.PlayerReachedEnd();
             SaveGame(currentLevelIndex + 1);  // Salva o próximo nível como o nível atual
         }
     }
