@@ -932,7 +932,6 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1930923978}
-  - {fileID: 1818200279}
   - {fileID: 1337016831}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5534,12 +5533,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentSaveSlot: 0
-  pauseMenu: {fileID: 0}
-  defeatMenu: {fileID: 0}
-  completionMenu: {fileID: 0}
-  levelSelectionMenu: {fileID: 0}
-  settingsMenu: {fileID: 0}
-  gameHUD: {fileID: 0}
+  pauseMenu: {fileID: 1993224756}
+  defeatMenu: {fileID: 1231547346}
+  completionMenu: {fileID: 846475670}
+  levelSelectionMenu: {fileID: 942617543}
+  settingsMenu: {fileID: 1339651649}
+  gameHUD: {fileID: 1355213248}
   groundMaterial: {fileID: 2100000, guid: d0cfc3957f2536a4582c698c24a21b8e, type: 2}
   skyMaterial: {fileID: 2100000, guid: bea179f1822ee3e4a913c13b282f16cb, type: 2}
   grassMaterial: {fileID: 2100000, guid: 6bd06d9eaafa83341a6042733f023006, type: 2}
@@ -8045,7 +8044,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1818200279}
   - component: {fileID: 1818200283}
-  - component: {fileID: 1818200282}
   - component: {fileID: 1818200281}
   - component: {fileID: 1818200280}
   m_Layer: 12
@@ -8063,12 +8061,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1818200278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.118, y: -0.0052, z: 0}
-  m_LocalScale: {x: 0.46621728, y: 0.8236573, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.014586979, y: 0.009530287, z: 0}
+  m_LocalScale: {x: 0.4533865, y: 0.80098933, z: 0.9724789}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 183890797}
+  m_Father: {fileID: 1930923978}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1818200280
 MonoBehaviour:
@@ -8102,51 +8100,6 @@ MonoBehaviour:
   fadeSpeed: 0.3
   fadeValue: -0.1
   isWorking: 1
---- !u!61 &1818200282
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1818200278}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!212 &1818200283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8559,7 +8512,8 @@ Transform:
   m_LocalPosition: {x: -0.133, y: -0.015, z: 0}
   m_LocalScale: {x: 1.0283, y: 1.0283, z: 1.0283}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1818200279}
   m_Father: {fileID: 183890797}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1930923979
@@ -8678,7 +8632,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.012251213, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -8689,7 +8643,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.6079569, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &1936366133
 GameObject:
