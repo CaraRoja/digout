@@ -9,11 +9,14 @@ public class PlayerMove : MonoBehaviour
     public float horizontalMovement;
     public float speed;
     public float jumpSpeed;
+    public float minSpeed;
+    public float maxSpeed;
     public bool rightDirection = true;
 
     private PlayerInput input;
     private CheckPlayerGround playerGround;
     private Meditation meditation;
+    private PlayerCoin playerCoin;
 
     private Vector3 rightScale = new Vector3(1f, 1f, 1f);
     private Vector3 leftScale = new Vector3(-1f, 1f, 1f);
@@ -25,12 +28,14 @@ public class PlayerMove : MonoBehaviour
         playerGround = GetComponent<CheckPlayerGround>();
         input = GetComponent<PlayerInput>();
         meditation = GetComponent<Meditation>();
+        playerCoin = GetComponent<PlayerCoin>();
     }
 
     // Update is called once per frame
     void Update()
     {
         ChangeDirection();
+        UpdateSpeed();
     }
     private void FixedUpdate()
     {
@@ -74,5 +79,10 @@ public class PlayerMove : MonoBehaviour
         {
             this.transform.localScale = leftScale;
         }
+    }
+
+    private void UpdateSpeed()
+    {
+        speed = playerCoin.coin.CalculateLogarithmicInterpolation(minSpeed, maxSpeed);
     }
 }

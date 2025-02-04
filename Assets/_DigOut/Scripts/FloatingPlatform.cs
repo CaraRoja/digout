@@ -1,34 +1,37 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FloatingPlatform : MonoBehaviour
 {
     public enum MovementType
     {
-        Parada,     // Faz o movimento senoidal no eixo Y com amplitude 0.5f e freq 1f (fixos)
-        Horizontal, // Movimento senoidal no eixo X
-        Vertical    // Movimento senoidal no eixo Y
+        Parada,
+        Horizontal,
+        Vertical
     }
 
     [Header("Tipo de movimento da plataforma")]
     public MovementType movementType = MovementType.Parada;
 
     [Header("Amplitude/Frequência para Horizontal/Vertical")]
-    [Tooltip("Amplitude usada quando o tipo for Horizontal ou Vertical.")]
     public float amplitudeHV = 3f;
-
-    [Tooltip("Frequência usada quando o tipo for Horizontal ou Vertical.")]
     public float frequencyHV = 1f;
 
-    // Posição inicial do objeto
     private Vector3 startPos;
+    private Vector3 previousPosition;
+
+    // Lista de jogadores que estão em contato com a plataforma
+    private List<Transform> playersOnPlatform = new List<Transform>();
 
     void Start()
     {
         startPos = transform.position;
+        previousPosition = transform.position;
     }
 
     void Update()
     {
+        // Movimenta a plataforma de acordo com o tipo selecionado
         switch (movementType)
         {
             case MovementType.Parada:
@@ -41,10 +44,20 @@ public class FloatingPlatform : MonoBehaviour
                 MoverVertical();
                 break;
         }
+
+        // Calcula o deslocamento (delta) da plataforma
+        Vector3 delta = transform.position - previousPosition;
+        previousPosition = transform.position;
+
+        // Aplica o mesmo deslocamento para cada jogador que está na plataforma
+        foreach (Transform player in playersOnPlatform)
+        {
+            player.position += delta;
+        }
     }
 
     /// <summary>
-    /// Movimento "parado", mas na verdade oscila no eixo Y com amplitude de 0.5f e freq 1f.
+    /// Movimento "parado", mas com oscilação no eixo Y (amplitude 0.5 e frequência 1).
     /// </summary>
     private void MoverParada()
     {
@@ -68,5 +81,40 @@ public class FloatingPlatform : MonoBehaviour
     {
         float newY = startPos.y + amplitudeHV * Mathf.Sin(Time.time * frequencyHV);
         transform.position = new Vector3(startPos.x, newY, startPos.z);
+    }
+
+    // Usando os métodos de colisão 2D para detectar o jogador
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (movementType == MovementType.Horizontal) {
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // Adiciona o jogador à lista
+                if (!playersOnPlatform.Contains(collision.transform))
+                {
+                    playersOnPlatform.Add(collision.transform);
+                }
+            }
+
+        }
+        
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (movementType == MovementType.Horizontal) {
+
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                // Remove o jogador da lista
+                if (playersOnPlatform.Contains(collision.transform))
+                {
+                    playersOnPlatform.Remove(collision.transform);
+                }
+            }
+
+        }
+        
     }
 }
