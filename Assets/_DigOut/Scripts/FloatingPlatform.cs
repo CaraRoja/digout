@@ -17,104 +17,139 @@ public class FloatingPlatform : MonoBehaviour
     public float amplitudeHV = 3f;
     public float frequencyHV = 1f;
 
+    // Valores fixos para o movimento 'Parada'
+    private const float paradaAmplitude = 0.5f;
+    private const float paradaFrequency = 1f;
+
     private Vector3 startPos;
     private Vector3 previousPosition;
+    private Meditation meditation;
 
-    // Lista de jogadores que estão em contato com a plataforma
-    private List<Transform> playersOnPlatform = new List<Transform>();
+    private readonly List<Transform> playersOnPlatform = new List<Transform>();
 
-    void Start()
+    private void Start()
     {
         startPos = transform.position;
         previousPosition = transform.position;
+        meditation = FindObjectOfType<Meditation>();
+
+        if (meditation == null)
+        {
+            Debug.LogError("Meditation não carregado!");
+        }
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        // Movimenta a plataforma de acordo com o tipo selecionado
-        switch (movementType)
-        {
-            case MovementType.Parada:
-                MoverParada();
-                break;
-            case MovementType.Horizontal:
-                MoverHorizontal();
-                break;
-            case MovementType.Vertical:
-                MoverVertical();
-                break;
-        }
+        // Atualiza o movimento da plataforma conforme o tipo selecionado
+        MovePlatform();
 
         // Calcula o deslocamento (delta) da plataforma
         Vector3 delta = transform.position - previousPosition;
         previousPosition = transform.position;
 
-        // Aplica o mesmo deslocamento para cada jogador que está na plataforma
+        // Aplica o deslocamento para cada jogador que não esteja como filho (para evitar dupla movimentação)
         foreach (Transform player in playersOnPlatform)
         {
-            player.position += delta;
+            if (player.parent != transform)
+            {
+                player.position += delta;
+            }
         }
     }
 
     /// <summary>
-    /// Movimento "parado", mas com oscilação no eixo Y (amplitude 0.5 e frequência 1).
+    /// Seleciona o movimento conforme o tipo definido.
     /// </summary>
-    private void MoverParada()
+    private void MovePlatform()
     {
-        float newY = startPos.y + 0.5f * Mathf.Sin(Time.time * 1f);
+        switch (movementType)
+        {
+            case MovementType.Parada:
+                MoveParada();
+                break;
+            case MovementType.Horizontal:
+                MoveHorizontal();
+                break;
+            case MovementType.Vertical:
+                MoveVertical();
+                break;
+        }
+    }
+
+    private void MoveParada()
+    {
+        float newY = startPos.y + paradaAmplitude * Mathf.Sin(Time.time * paradaFrequency);
         transform.position = new Vector3(startPos.x, newY, startPos.z);
     }
 
-    /// <summary>
-    /// Movimento na horizontal (eixo X), usando amplitudeHV e frequencyHV.
-    /// </summary>
-    private void MoverHorizontal()
+    private void MoveHorizontal()
     {
         float newX = startPos.x + amplitudeHV * Mathf.Sin(Time.time * frequencyHV);
         transform.position = new Vector3(newX, startPos.y, startPos.z);
     }
 
-    /// <summary>
-    /// Movimento na vertical (eixo Y), usando amplitudeHV e frequencyHV.
-    /// </summary>
-    private void MoverVertical()
+    private void MoveVertical()
     {
         float newY = startPos.y + amplitudeHV * Mathf.Sin(Time.time * frequencyHV);
         transform.position = new Vector3(startPos.x, newY, startPos.z);
     }
 
-    // Usando os métodos de colisão 2D para detectar o jogador
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (movementType == MovementType.Horizontal) {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
 
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // Adiciona o jogador à lista
-                if (!playersOnPlatform.Contains(collision.transform))
-                {
-                    playersOnPlatform.Add(collision.transform);
-                }
-            }
-
+        Transform playerTransform = collision.transform;
+        if (!playersOnPlatform.Contains(playerTransform))
+        {
+            playersOnPlatform.Add(playerTransform);
         }
-        
+
+        // Se o jogador estiver meditando, define-o como filho da plataforma
+        if (meditation != null && meditation.PlayerIsMeditating())
+        {
+            SetAsChild(playerTransform);
+        }
     }
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        if (movementType == MovementType.Horizontal) {
+        if (!collision.gameObject.CompareTag("Player"))
+            return;
 
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                // Remove o jogador da lista
-                if (playersOnPlatform.Contains(collision.transform))
-                {
-                    playersOnPlatform.Remove(collision.transform);
-                }
-            }
-
+        Transform playerTransform = collision.transform;
+        if (playersOnPlatform.Contains(playerTransform))
+        {
+            playersOnPlatform.Remove(playerTransform);
         }
-        
+
+        // Se o jogador estava como filho da plataforma, remove essa relação
+        if (playerTransform.parent == transform)
+        {
+            RemoveAsChild(playerTransform);
+        }
+    }
+
+    /// <summary>
+    /// Define o jogador como filho da plataforma, mantendo sua posição e escala globais.
+    /// </summary>
+    private void SetAsChild(Transform player)
+    {
+        Vector3 originalScale = player.lossyScale;
+        player.SetParent(transform, true); // true: mantém a posição global
+        player.localScale = transform.InverseTransformVector(originalScale); // Restaura a escala global
+        Debug.Log("Jogador está meditando e agora é filho da plataforma.");
+    }
+
+    /// <summary>
+    /// Remove a relação de pai do jogador, restaurando sua escala global.
+    /// </summary>
+    private void RemoveAsChild(Transform player)
+    {
+        Vector3 originalScale = player.lossyScale;
+        player.SetParent(null);
+        player.localScale = originalScale;
+        Debug.Log("Jogador parou de meditar e não é mais filho da plataforma.");
     }
 }
