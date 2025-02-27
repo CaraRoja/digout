@@ -12,15 +12,15 @@ public class CoinManager : MonoBehaviour
     public float coinLoseTimeValue;
     public bool isCoinWorking = true;
 
-    public PlayerJump playerJump;
+    private DialogueManager dialogue;
     private void Awake()
     {
-        playerJump = GameObject.Find("Player").GetComponent<PlayerJump>();
+
     }
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogue = GameObject.Find("DialogueManager").GetComponent<DialogueManager>();
     }
 
     // Update is called once per frame
@@ -88,7 +88,15 @@ public class CoinManager : MonoBehaviour
 
     public void SetCoinStatusWorking(bool status)
     {
-        isCoinWorking = status;
+        if (dialogue.DialogueIsRunning())
+        {
+            isCoinWorking = false;
+        }
+        else
+        {
+            isCoinWorking = status;
+        }
+        
     }
 
     public float GetCoins()

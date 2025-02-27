@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour
     private PlayerMove player;
     private PlayerCoin playerCoin;
     private Meditation meditation;
-    private CoinManager coin;
+    private PlayerCheckDialogue checkDialogue;
 
 
     public float jumpForce;
@@ -23,12 +23,12 @@ public class PlayerJump : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        coin = GameObject.Find("CoinManager").GetComponent<CoinManager>();
         playerCoin = GetComponent<PlayerCoin>();
         input = GetComponent<PlayerInput>();
         ground = GetComponent<CheckPlayerGround>();
         player = GetComponent<PlayerMove>();
         meditation = GetComponent<Meditation>();
+        checkDialogue = GetComponent<PlayerCheckDialogue>();
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PlayerJump : MonoBehaviour
 
     public void Jump()
     {
-        if (input.JumpInput() && ground.IsGrounded() && !isJumping && !meditation.PlayerIsMeditating())
+        if (input.JumpInput() && ground.IsGrounded() && !isJumping && !meditation.PlayerIsMeditating() && !checkDialogue.dialogue.DialogueIsRunning())
         {
             isJumping = true;
             player.body.velocity = new Vector2(player.body.velocity.x, jumpForce);
@@ -50,6 +50,8 @@ public class PlayerJump : MonoBehaviour
         {
             isJumping = false;
         }
+
+        //player.body.velocity = new Vector2(player.body.velocity.x, player.body.velocity.y);
     }
 
     public float GetVerticalVelocity()

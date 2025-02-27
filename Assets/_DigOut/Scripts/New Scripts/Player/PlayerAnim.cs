@@ -11,6 +11,7 @@ public class PlayerAnim : MonoBehaviour
     private PlayerJump jump;
     private CheckPlayerGround ground;
     private Meditation meditation;
+    private PlayerCheckDialogue checkDialogue;
 
     //private PlayerMove player;
 
@@ -22,6 +23,7 @@ public class PlayerAnim : MonoBehaviour
         ground = GetComponent<CheckPlayerGround>();
         jump = GetComponent<PlayerJump>();
         meditation = GetComponent<Meditation>();
+        checkDialogue = GetComponent<PlayerCheckDialogue>();
 
     }
 
@@ -33,7 +35,15 @@ public class PlayerAnim : MonoBehaviour
 
     public void PlayerAnimation()
     {
-        anim.SetFloat("Speed", Mathf.Abs(input.HorizontalInput()));
+        if (!checkDialogue.dialogue.DialogueIsRunning())
+        {
+            anim.SetFloat("Speed", Mathf.Abs(input.HorizontalInput()));
+        }
+        else
+        {
+            anim.SetFloat("Speed", 0f);
+        }
+        
 
         anim.SetFloat("JumpSpeed", jump.GetVerticalVelocity());
 

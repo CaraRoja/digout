@@ -17,6 +17,7 @@ public class PlayerMove : MonoBehaviour
     private CheckPlayerGround playerGround;
     private Meditation meditation;
     private PlayerCoin playerCoin;
+    private PlayerCheckDialogue checkDialogue;
 
     private Vector3 rightScale = new Vector3(1f, 1f, 1f);
     private Vector3 leftScale = new Vector3(-1f, 1f, 1f);
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
         input = GetComponent<PlayerInput>();
         meditation = GetComponent<Meditation>();
         playerCoin = GetComponent<PlayerCoin>();
+        checkDialogue = GetComponent<PlayerCheckDialogue>();
     }
 
     // Update is called once per frame
@@ -44,29 +46,33 @@ public class PlayerMove : MonoBehaviour
 
     public void Move() 
     {
-        if (!meditation.PlayerIsMeditating())
+        if (!meditation.PlayerIsMeditating() && !checkDialogue.dialogue.DialogueIsRunning())
         {
             horizontalMovement = input.HorizontalInput();
             this.body.velocity = new Vector2(horizontalMovement * speed, this.body.velocity.y);
         }
         else
         {
-            this.body.velocity = Vector2.zero;
+            this.body.velocity = new Vector2(0f, this.body.velocity.y);
         }
     }
 
     public void ChangeDirection()
     {
-        if (input.HorizontalInput() > 0f && !rightDirection)
+        if (!checkDialogue.dialogue.DialogueIsRunning())
         {
-            rightDirection = true;
-        }
-        else if (input.HorizontalInput() < 0f && rightDirection)
-        {
-            rightDirection = false;
-        }
+            if (input.HorizontalInput() > 0f && !rightDirection)
+            {
+                rightDirection = true;
+            }
+            else if (input.HorizontalInput() < 0f && rightDirection)
+            {
+                rightDirection = false;
+            }
 
-        ChangeScale();
+            ChangeScale();
+        }
+        
     }
 
     public void ChangeScale()

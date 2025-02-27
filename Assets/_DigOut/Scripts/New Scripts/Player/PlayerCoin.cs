@@ -6,6 +6,7 @@ public class PlayerCoin : MonoBehaviour
 {
 
     public CoinManager coin;
+    public PlayerCheckDialogue dialogue;
     public bool pickedCoin = false;
 
     private void Awake()
@@ -15,7 +16,7 @@ public class PlayerCoin : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        dialogue = GetComponent<PlayerCheckDialogue>();
     }
 
     // Update is called once per frame

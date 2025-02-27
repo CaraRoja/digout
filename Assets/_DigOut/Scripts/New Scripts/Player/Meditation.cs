@@ -13,6 +13,7 @@ public class Meditation : MonoBehaviour
     private PlayerAnim anim;
     private PlayerInput input;
     private CheckPlayerGround ground;
+    private PlayerCheckDialogue dialogue;
 
     private void Awake()
     {
@@ -25,6 +26,7 @@ public class Meditation : MonoBehaviour
         input = GetComponent<PlayerInput>();
         playerCoin = GetComponent<PlayerCoin>();
         ground = GetComponent<CheckPlayerGround>();
+        dialogue = GetComponent<PlayerCheckDialogue>();
     }
 
     // Update is called once per frame
@@ -35,7 +37,7 @@ public class Meditation : MonoBehaviour
 
     void StartMeditation()
     {
-        if (input.MeditationInput() && ground.IsGrounded())
+        if (input.MeditationInput() && ground.IsGrounded() && !dialogue.dialogue.DialogueIsRunning())
         {
             isMeditating = true;
             playerCoin.SetCoinStatusWorking(false);

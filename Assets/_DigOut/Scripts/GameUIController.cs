@@ -29,21 +29,7 @@ public class GameUIController : MonoBehaviour
 
     void Update()
     {
-        // Garante que playerManager foi atribuído
-        if (playerManager != null)
-        {
-            // Atualiza os textos UI com as informações atuais vindas do PlayerManager
-            coinText.text = "Coins: " + playerManager.coins.ToString();
-            speedText.text = "Speed: " + playerManager.speed.ToString("F2");
-            jumpPowerText.text = "Jump Power: " + playerManager.jumpForce.ToString("F2");
 
-            // Atualiza o valor da barra de ânimo com base no valor do playerManager
-            UpdateHUDValue(playerManager.coins);
-        }
-        else
-        {
-            Debug.LogWarning("PlayerManager não está atribuído ao GameUIController!");
-        }
     }
 
     // Função para atualizar o valor da HUD (ânimo)

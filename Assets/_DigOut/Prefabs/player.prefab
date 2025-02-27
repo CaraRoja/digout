@@ -949,8 +949,6 @@ GameObject:
   - component: {fileID: 3896036167472557624}
   - component: {fileID: 2896211201719585089}
   - component: {fileID: 8874715395856598162}
-  - component: {fileID: 9182544022850467662}
-  - component: {fileID: 715675112604933762}
   - component: {fileID: 3564717594865437485}
   - component: {fileID: 8162288895162518503}
   - component: {fileID: 6094323162413975676}
@@ -959,6 +957,7 @@ GameObject:
   - component: {fileID: 5978447567942279779}
   - component: {fileID: 5931059509888500907}
   - component: {fileID: 5994477975438665098}
+  - component: {fileID: 2809538192983691621}
   m_Layer: 6
   m_Name: player
   m_TagString: Player
@@ -1109,61 +1108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5333824, y: 1.0546758}
   m_EdgeRadius: 0
---- !u!114 &9182544022850467662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6825461469848323057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c25f8648ae49f74cb13ee62c68e856e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4301044685983334797}
-  pauseMenu: {fileID: 0}
-  moveTutorial: {fileID: 0}
-  jumpTutorial: {fileID: 0}
-  meditateTutorial: {fileID: 0}
-  solveTutorial: {fileID: 0}
-  radius: 0.6
-  meditationTime: 3
-  solvingTime: 3
-  meditationCooldown: 15
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 2048
-  platformLayer:
-    serializedVersion: 2
-    m_Bits: 1024
---- !u!114 &715675112604933762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6825461469848323057}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7fe6c41fb5a8454db14b8a83fda91f7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  coins: 100
-  jumpForce: 6.5
-  speed: 4
-  maxJumpForce: 10
-  maxSpeed: 8
-  minJumpForce: 4
-  minSpeed: 2
-  meditationCoinRate: 1
-  solvingTime: 2.57
-  walkClip: {fileID: 8300000, guid: 9257571dd9ff81140b55bfd989da3168, type: 3}
-  jumpClip: {fileID: 8300000, guid: 547833101f659d2408b03f3847546de4, type: 3}
-  solvingClip: {fileID: 8300000, guid: c4869d6c5ae46ab4ea41da5455df09bf, type: 3}
-  meditatingClip: {fileID: 8300000, guid: c749c1e98b8da7746b098bcbdab58bdf, type: 3}
-  playerAudioSource: {fileID: 1446593207119622515}
-  bgmAudioSource: {fileID: 0}
 --- !u!114 &3564717594865437485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1191,7 +1135,9 @@ MonoBehaviour:
   body: {fileID: 0}
   horizontalMovement: 0
   speed: 4
-  jumpSpeed: 0
+  jumpSpeed: 1
+  minSpeed: 2
+  maxSpeed: 6
   rightDirection: 1
 --- !u!114 &6094323162413975676
 MonoBehaviour:
@@ -1209,7 +1155,7 @@ MonoBehaviour:
   maxJumpForce: 12
   minJumpForce: 6
   isJumping: 0
-  verticalVelocity: 0
+  verticalVelocity: 1
 --- !u!114 &5309715306118760209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1286,6 +1232,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   coin: {fileID: 0}
   pickedCoin: 0
+--- !u!114 &2809538192983691621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825461469848323057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef41661c3f48c854692c182cf5b9cd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 0}
 --- !u!1 &8113407861807388565
 GameObject:
   m_ObjectHideFlags: 0
