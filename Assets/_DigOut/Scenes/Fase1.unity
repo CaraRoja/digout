@@ -19463,17 +19463,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3538622242730440696, guid: 29dd041a6c1bad74f9c5f7f3e926efc0, type: 3}
   m_PrefabInstance: {fileID: 6682527724323663690}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &615091289 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1451262082992240687, guid: 29dd041a6c1bad74f9c5f7f3e926efc0, type: 3}
-  m_PrefabInstance: {fileID: 6682527724323663690}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7823c75c2df09da439ae3d1755a9f122, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &616405941
 GameObject:
   m_ObjectHideFlags: 0
@@ -23775,8 +23764,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 4.537, y: 6.4021}
-  m_SizeDelta: {x: 9.074, y: 12.804}
+  m_AnchoredPosition: {x: 0, y: 6.4021}
+  m_SizeDelta: {x: 0, y: 12.8043}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &771574843
 MonoBehaviour:
@@ -32160,7 +32149,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -0.07651514, y: 0, z: -1.3116416, w: 0}
+  m_margin: {x: 31.196213, y: 0, z: 20.634396, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -62481,17 +62470,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2072325925 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4373054372558239799, guid: 4e0f155599011644289d2c2ef179ba7e, type: 3}
-  m_PrefabInstance: {fileID: 3216152278485602716}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e57e868c07037544b54184c26ce3f47, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2072994301
 GameObject:
   m_ObjectHideFlags: 0
@@ -63060,39 +63038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: SETTINGS
---- !u!114 &2088105016 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2809538192983691621, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-  m_PrefabInstance: {fileID: 2776601434003640952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef41661c3f48c854692c182cf5b9cd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2088105017 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5994477975438665098, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-  m_PrefabInstance: {fileID: 2776601434003640952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5df4e8c4472aa374b9f19c9ae8c057cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2088105019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5978447567942279779, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-  m_PrefabInstance: {fileID: 2776601434003640952}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adac0d67ac9815a49aa92b367461f540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2089531072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66211,18 +66156,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2809538192983691621, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 2088105017}
-    - target: {fileID: 2809538192983691621, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-      propertyPath: dialogue
-      value: 
-      objectReference: {fileID: 615091289}
-    - target: {fileID: 2809538192983691621, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-      propertyPath: meditation
-      value: 
-      objectReference: {fileID: 2088105019}
     - target: {fileID: 2865311735680128005, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
       propertyPath: m_LocalPosition.x
       value: -25.21
@@ -66263,14 +66196,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5994477975438665098, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-      propertyPath: coin
-      value: 
-      objectReference: {fileID: 2072325925}
-    - target: {fileID: 5994477975438665098, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
-      propertyPath: dialogue
-      value: 
-      objectReference: {fileID: 2088105016}
     - target: {fileID: 6825461469848323057, guid: 6a8457b9275f0fe43b85c5b0bced4162, type: 3}
       propertyPath: m_Name
       value: Player

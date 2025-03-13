@@ -8,6 +8,8 @@ public class Coin : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            // Certifique-se de que o PlayerManager também está adaptado para 2D
+            other.GetComponent<PlayerManager>().AddCoins(1);
 
             // Ativa o sistema de partículas
             if (coinParticles != null)
