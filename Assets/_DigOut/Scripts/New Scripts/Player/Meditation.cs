@@ -11,7 +11,7 @@ public class Meditation : MonoBehaviour
 
     private Coroutine co;
     private PlayerAnim anim;
-    private PlayerInput input;
+    private PlayerInputHandler input;
     private CheckPlayerGround ground;
     private PlayerCheckDialogue dialogue;
 
@@ -23,7 +23,7 @@ public class Meditation : MonoBehaviour
     void Start()
     {
         anim = GetComponent<PlayerAnim>();
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerInputHandler>();
         playerCoin = GetComponent<PlayerCoin>();
         ground = GetComponent<CheckPlayerGround>();
         dialogue = GetComponent<PlayerCheckDialogue>();
@@ -33,51 +33,28 @@ public class Meditation : MonoBehaviour
     void Update()
     {
         StartMeditation();
+
     }
 
-    void StartMeditation()
+    public void StartMeditation()
     {
-        if (input.MeditationInput() && ground.IsGrounded() && !dialogue.dialogue.DialogueIsRunning())
+        if (ground.IsGrounded() && !dialogue.dialogue.DialogueIsRunning() && input.MeditationInputIsActive())
         {
             isMeditating = true;
             playerCoin.SetCoinStatusWorking(false);
-            if (!beginCoroutine)
-            {
-                beginCoroutine = true;
-                Debug.Log("Criou coroutine");
-                StartCoroutine(AddCoinWithMeditation());
-            }
-            //anim.animator.SetBool("Meditate", true);
-            //playerManager.StartMeditation();
-
-            /*
-            meditationCoroutine = StartCoroutine(MeditationRoutine());
-
-            if (!hasMeditated)
-            {
-                hasMeditated = true;
-                StartCoroutine(HideTutorialAfterDelay(meditateTutorial, 1f));
-            }
-            */
+            playerCoin.AddCoinWithTime();
 
         }
-        else
+        else if (!input.MeditationInputIsActive())
         {
             isMeditating = false;
             playerCoin.SetCoinStatusWorking(true);
         }
-    }    
+
+    }
 
     public bool PlayerIsMeditating()
     {
         return isMeditating;
-    }
-
-    private IEnumerator AddCoinWithMeditation()
-    {
-        playerCoin.AddCoin(meditationCoinValue);
-        yield return new WaitForSeconds(0.5f);
-        beginCoroutine = false;
-        //StopMeditation();
     }
 }

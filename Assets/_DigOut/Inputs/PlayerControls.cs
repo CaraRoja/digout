@@ -24,14 +24,14 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     ""name"": ""PlayerControls"",
     ""maps"": [
         {
-            ""name"": ""PlayerActions"",
+            ""name"": ""Player"",
             ""id"": ""8b7905b5-0677-4721-b9be-f7650b31eb20"",
             ""actions"": [
                 {
                     ""name"": ""Jump"",
                     ""type"": ""Button"",
                     ""id"": ""3c48ceab-5f57-4ae3-a2a0-4c55892cf421"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -49,16 +49,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Meditate"",
                     ""type"": ""Button"",
                     ""id"": ""f697b044-7a7c-4c6f-afc1-fbdb21cb55c6"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""SolveProblem"",
-                    ""type"": ""Button"",
-                    ""id"": ""3b7a4e39-e7e3-4b27-9ae5-88c279987d0a"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -67,7 +58,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""5c448513-7bc5-4808-b811-74c536a72a96"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -76,7 +67,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""SolveProblemLeft"",
                     ""type"": ""Button"",
                     ""id"": ""55eb9ffe-98a8-4cdb-8a32-a2fb7f588c16"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -85,7 +76,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": ""SolveProblemRight"",
                     ""type"": ""Button"",
                     ""id"": ""f7d9d96f-4be1-4d6e-b2e3-c0e9532fcec9"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -142,7 +133,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -153,7 +144,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": """",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -164,7 +155,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/a"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -175,7 +166,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/d"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -219,7 +210,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/leftArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -230,7 +221,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/rightArrow"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";New control scheme"",
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -239,7 +230,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""0a76fb0e-8474-4f85-a01e-ef745e95bfda"",
                     ""path"": ""<Keyboard>/m"",
-                    ""interactions"": """",
+                    ""interactions"": ""Hold"",
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
                     ""action"": ""Meditate"",
@@ -254,83 +245,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""New control scheme"",
                     ""action"": ""Meditate"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""5d560e29-ba52-4941-a328-cdd67d14de2d"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""e00e3e37-9702-4265-9818-3cc0aded8488"",
-                    ""path"": ""<Gamepad>/leftShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""8cf1ece5-2537-43d6-b880-5845c6bc8538"",
-                    ""path"": ""<Gamepad>/rightShoulder"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""One Modifier"",
-                    ""id"": ""49dc2ce3-fc23-4377-b3ff-f288086716b2"",
-                    ""path"": ""OneModifier"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""modifier"",
-                    ""id"": ""843a4029-416b-45bb-aaac-386d0efc942b"",
-                    ""path"": ""<Keyboard>/leftShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""binding"",
-                    ""id"": ""a2c35fca-232d-4105-85d3-5d3e3bc87028"",
-                    ""path"": ""<Keyboard>/rightShift"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""b6df42b4-0d06-4ba8-8923-9fa43a465ea4"",
-                    ""path"": ""<Gamepad>/buttonEast"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SolveProblem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -401,6 +315,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Dialogue"",
+            ""id"": ""220d95ac-ae09-4c67-a4a0-e05f04c9bb77"",
+            ""actions"": [
+                {
+                    ""name"": ""SkipDialogue"",
+                    ""type"": ""Button"",
+                    ""id"": ""28bfa4aa-9810-4e35-9d69-58cf77586fef"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5fc0dfb4-d83e-4d3e-9a34-1379a045d59f"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";New control scheme"",
+                    ""action"": ""SkipDialogue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -427,20 +369,23 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         }
     ]
 }");
-        // PlayerActions
-        m_PlayerActions = asset.FindActionMap("PlayerActions", throwIfNotFound: true);
-        m_PlayerActions_Jump = m_PlayerActions.FindAction("Jump", throwIfNotFound: true);
-        m_PlayerActions_Move = m_PlayerActions.FindAction("Move", throwIfNotFound: true);
-        m_PlayerActions_Meditate = m_PlayerActions.FindAction("Meditate", throwIfNotFound: true);
-        m_PlayerActions_SolveProblem = m_PlayerActions.FindAction("SolveProblem", throwIfNotFound: true);
-        m_PlayerActions_Pause = m_PlayerActions.FindAction("Pause", throwIfNotFound: true);
-        m_PlayerActions_SolveProblemLeft = m_PlayerActions.FindAction("SolveProblemLeft", throwIfNotFound: true);
-        m_PlayerActions_SolveProblemRight = m_PlayerActions.FindAction("SolveProblemRight", throwIfNotFound: true);
+        // Player
+        m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
+        m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
+        m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
+        m_Player_Meditate = m_Player.FindAction("Meditate", throwIfNotFound: true);
+        m_Player_Pause = m_Player.FindAction("Pause", throwIfNotFound: true);
+        m_Player_SolveProblemLeft = m_Player.FindAction("SolveProblemLeft", throwIfNotFound: true);
+        m_Player_SolveProblemRight = m_Player.FindAction("SolveProblemRight", throwIfNotFound: true);
+        // Dialogue
+        m_Dialogue = asset.FindActionMap("Dialogue", throwIfNotFound: true);
+        m_Dialogue_SkipDialogue = m_Dialogue.FindAction("SkipDialogue", throwIfNotFound: true);
     }
 
     ~@PlayerControls()
     {
-        UnityEngine.Debug.Assert(!m_PlayerActions.enabled, "This will cause a leak and performance issues, PlayerControls.PlayerActions.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Player.enabled, "This will cause a leak and performance issues, PlayerControls.Player.Disable() has not been called.");
+        UnityEngine.Debug.Assert(!m_Dialogue.enabled, "This will cause a leak and performance issues, PlayerControls.Dialogue.Disable() has not been called.");
     }
 
     public void Dispose()
@@ -499,36 +444,34 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         return asset.FindBinding(bindingMask, out action);
     }
 
-    // PlayerActions
-    private readonly InputActionMap m_PlayerActions;
-    private List<IPlayerActionsActions> m_PlayerActionsActionsCallbackInterfaces = new List<IPlayerActionsActions>();
-    private readonly InputAction m_PlayerActions_Jump;
-    private readonly InputAction m_PlayerActions_Move;
-    private readonly InputAction m_PlayerActions_Meditate;
-    private readonly InputAction m_PlayerActions_SolveProblem;
-    private readonly InputAction m_PlayerActions_Pause;
-    private readonly InputAction m_PlayerActions_SolveProblemLeft;
-    private readonly InputAction m_PlayerActions_SolveProblemRight;
-    public struct PlayerActionsActions
+    // Player
+    private readonly InputActionMap m_Player;
+    private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
+    private readonly InputAction m_Player_Jump;
+    private readonly InputAction m_Player_Move;
+    private readonly InputAction m_Player_Meditate;
+    private readonly InputAction m_Player_Pause;
+    private readonly InputAction m_Player_SolveProblemLeft;
+    private readonly InputAction m_Player_SolveProblemRight;
+    public struct PlayerActions
     {
         private @PlayerControls m_Wrapper;
-        public PlayerActionsActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Jump => m_Wrapper.m_PlayerActions_Jump;
-        public InputAction @Move => m_Wrapper.m_PlayerActions_Move;
-        public InputAction @Meditate => m_Wrapper.m_PlayerActions_Meditate;
-        public InputAction @SolveProblem => m_Wrapper.m_PlayerActions_SolveProblem;
-        public InputAction @Pause => m_Wrapper.m_PlayerActions_Pause;
-        public InputAction @SolveProblemLeft => m_Wrapper.m_PlayerActions_SolveProblemLeft;
-        public InputAction @SolveProblemRight => m_Wrapper.m_PlayerActions_SolveProblemRight;
-        public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
+        public PlayerActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Jump => m_Wrapper.m_Player_Jump;
+        public InputAction @Move => m_Wrapper.m_Player_Move;
+        public InputAction @Meditate => m_Wrapper.m_Player_Meditate;
+        public InputAction @Pause => m_Wrapper.m_Player_Pause;
+        public InputAction @SolveProblemLeft => m_Wrapper.m_Player_SolveProblemLeft;
+        public InputAction @SolveProblemRight => m_Wrapper.m_Player_SolveProblemRight;
+        public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
         public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(PlayerActionsActions set) { return set.Get(); }
-        public void AddCallbacks(IPlayerActionsActions instance)
+        public static implicit operator InputActionMap(PlayerActions set) { return set.Get(); }
+        public void AddCallbacks(IPlayerActions instance)
         {
-            if (instance == null || m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Add(instance);
+            if (instance == null || m_Wrapper.m_PlayerActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_PlayerActionsCallbackInterfaces.Add(instance);
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
@@ -538,9 +481,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Meditate.started += instance.OnMeditate;
             @Meditate.performed += instance.OnMeditate;
             @Meditate.canceled += instance.OnMeditate;
-            @SolveProblem.started += instance.OnSolveProblem;
-            @SolveProblem.performed += instance.OnSolveProblem;
-            @SolveProblem.canceled += instance.OnSolveProblem;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -552,7 +492,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SolveProblemRight.canceled += instance.OnSolveProblemRight;
         }
 
-        private void UnregisterCallbacks(IPlayerActionsActions instance)
+        private void UnregisterCallbacks(IPlayerActions instance)
         {
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
@@ -563,9 +503,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Meditate.started -= instance.OnMeditate;
             @Meditate.performed -= instance.OnMeditate;
             @Meditate.canceled -= instance.OnMeditate;
-            @SolveProblem.started -= instance.OnSolveProblem;
-            @SolveProblem.performed -= instance.OnSolveProblem;
-            @SolveProblem.canceled -= instance.OnSolveProblem;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -577,21 +514,67 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @SolveProblemRight.canceled -= instance.OnSolveProblemRight;
         }
 
-        public void RemoveCallbacks(IPlayerActionsActions instance)
+        public void RemoveCallbacks(IPlayerActions instance)
         {
-            if (m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Remove(instance))
+            if (m_Wrapper.m_PlayerActionsCallbackInterfaces.Remove(instance))
                 UnregisterCallbacks(instance);
         }
 
-        public void SetCallbacks(IPlayerActionsActions instance)
+        public void SetCallbacks(IPlayerActions instance)
         {
-            foreach (var item in m_Wrapper.m_PlayerActionsActionsCallbackInterfaces)
+            foreach (var item in m_Wrapper.m_PlayerActionsCallbackInterfaces)
                 UnregisterCallbacks(item);
-            m_Wrapper.m_PlayerActionsActionsCallbackInterfaces.Clear();
+            m_Wrapper.m_PlayerActionsCallbackInterfaces.Clear();
             AddCallbacks(instance);
         }
     }
-    public PlayerActionsActions @PlayerActions => new PlayerActionsActions(this);
+    public PlayerActions @Player => new PlayerActions(this);
+
+    // Dialogue
+    private readonly InputActionMap m_Dialogue;
+    private List<IDialogueActions> m_DialogueActionsCallbackInterfaces = new List<IDialogueActions>();
+    private readonly InputAction m_Dialogue_SkipDialogue;
+    public struct DialogueActions
+    {
+        private @PlayerControls m_Wrapper;
+        public DialogueActions(@PlayerControls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @SkipDialogue => m_Wrapper.m_Dialogue_SkipDialogue;
+        public InputActionMap Get() { return m_Wrapper.m_Dialogue; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(DialogueActions set) { return set.Get(); }
+        public void AddCallbacks(IDialogueActions instance)
+        {
+            if (instance == null || m_Wrapper.m_DialogueActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Add(instance);
+            @SkipDialogue.started += instance.OnSkipDialogue;
+            @SkipDialogue.performed += instance.OnSkipDialogue;
+            @SkipDialogue.canceled += instance.OnSkipDialogue;
+        }
+
+        private void UnregisterCallbacks(IDialogueActions instance)
+        {
+            @SkipDialogue.started -= instance.OnSkipDialogue;
+            @SkipDialogue.performed -= instance.OnSkipDialogue;
+            @SkipDialogue.canceled -= instance.OnSkipDialogue;
+        }
+
+        public void RemoveCallbacks(IDialogueActions instance)
+        {
+            if (m_Wrapper.m_DialogueActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IDialogueActions instance)
+        {
+            foreach (var item in m_Wrapper.m_DialogueActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_DialogueActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public DialogueActions @Dialogue => new DialogueActions(this);
     private int m_NewcontrolschemeSchemeIndex = -1;
     public InputControlScheme NewcontrolschemeScheme
     {
@@ -601,14 +584,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_NewcontrolschemeSchemeIndex];
         }
     }
-    public interface IPlayerActionsActions
+    public interface IPlayerActions
     {
         void OnJump(InputAction.CallbackContext context);
         void OnMove(InputAction.CallbackContext context);
         void OnMeditate(InputAction.CallbackContext context);
-        void OnSolveProblem(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnSolveProblemLeft(InputAction.CallbackContext context);
         void OnSolveProblemRight(InputAction.CallbackContext context);
+    }
+    public interface IDialogueActions
+    {
+        void OnSkipDialogue(InputAction.CallbackContext context);
     }
 }

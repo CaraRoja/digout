@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerCheckDialogue : MonoBehaviour
 {
+    private PlayerInputHandler input;
     public PlayerCoin coin;
     public DialogueManager dialogue;
     public Meditation meditation;
     public bool collided = false;
+    public bool skipDialogueInputPressed = false;
 
     private void Awake()
     {
@@ -16,6 +18,7 @@ public class PlayerCheckDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        input = GetComponent<PlayerInputHandler>();
         coin = GetComponent<PlayerCoin>();
     }
 
@@ -23,6 +26,16 @@ public class PlayerCheckDialogue : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void SetDialogueSkipStatus()
+    {
+        StartCoroutine(DelayDialogueSkipInput());
+    }
+
+    public bool CheckSkipDialogueStatus()
+    {
+        return skipDialogueInputPressed;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -34,11 +47,23 @@ public class PlayerCheckDialogue : MonoBehaviour
         }
     }
 
+    public void CheckInputActionsMaps()
+    {
+        input.CheckInputActionMap();
+    }
+
     public IEnumerator DelayDialogueCollision(string dialogueName)
     {
         collided = true;
         dialogue.PlayDialogueOnScene(dialogueName);
         yield return new WaitForSecondsRealtime(0.5f);
         collided = false;
+    }
+
+    public IEnumerator DelayDialogueSkipInput()
+    {
+        skipDialogueInputPressed = true;
+        yield return new WaitForEndOfFrame();
+        skipDialogueInputPressed = false;
     }
 }

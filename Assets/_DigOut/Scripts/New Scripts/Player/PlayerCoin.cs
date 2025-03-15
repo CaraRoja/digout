@@ -30,9 +30,9 @@ public class PlayerCoin : MonoBehaviour
         coin.AddCoins();
     }
 
-    public void AddCoin(float value)
+    public void AddCoinWithTime()
     {
-        coin.AddCoins(value);
+        coin.AddCoinsWithTime();
     }
 
     public void SetCoinStatusWorking(bool status)

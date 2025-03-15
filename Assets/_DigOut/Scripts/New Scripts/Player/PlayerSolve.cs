@@ -17,12 +17,12 @@ public class PlayerSolve : MonoBehaviour
     */
 
     private PlayerAnim anim;
-    private PlayerInput input;
+    private PlayerInputHandler input;
     public SolveEnemy solveEnemy;
     // Start is called before the first frame update
     void Start()
     {
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerInputHandler>();
         solveEnemy = GetComponentInChildren<SolveEnemy>();
     }
 

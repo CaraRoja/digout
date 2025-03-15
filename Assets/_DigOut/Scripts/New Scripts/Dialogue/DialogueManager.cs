@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour {
 
 
+	private PlayerCheckDialogue playerCheckDialogue;
 
 	public GameObject dialoguePanel;
 	public TextMeshProUGUI nameText;
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		playerCheckDialogue = GameObject.Find("Player").GetComponent<PlayerCheckDialogue>();
 		sentences = new Queue<string>();
 		names = new Queue<string>();
 
@@ -65,8 +67,13 @@ public class DialogueManager : MonoBehaviour {
 
                     //game.player.playerIsInDialogue = true;
                     dialoguePanel.SetActive(true);
-                    dialogueOBJ.playedBefore = true;            //Informar que já o executou, para não repetir (Real uso dele é para os que não são repetíveis)
+                    
+					//Informar que já o executou, para não repetir (Real uso dele é para os que não são repetíveis)
+                    dialogueOBJ.playedBefore = true;
                     StartDialogue(dialogueOBJ.dialogue);
+					
+					//Verifica se é pra ativar ou desativar o Action Map "Dialogue" do Input de acordo com o status do diálogo
+					playerCheckDialogue.CheckInputActionsMaps();
                     break;
                 }
             }
@@ -93,6 +100,9 @@ public class DialogueManager : MonoBehaviour {
                     dialoguePanel.SetActive(true);
                     dialogueOBJ.playedBefore = true;            //Informar que já o executou, para não repetir (Real uso dele é para os que não são repetíveis)
                     StartDialogue(dialogueOBJ.dialogue);
+
+                    //Verifica se é pra ativar ou desativar o Action Map "Dialogue" do Input de acordo com o status do diálogo
+                    playerCheckDialogue.CheckInputActionsMaps();
                     break;
                 }
             }
@@ -157,7 +167,7 @@ public class DialogueManager : MonoBehaviour {
 
 	public void SkipDialogue()
 	{
-        if (DialogueIsRunning() && Input.GetKeyDown(KeyCode.E))
+        if (DialogueIsRunning() && playerCheckDialogue.CheckSkipDialogueStatus())
         {
             if (textIsUpdating)
             {
@@ -212,7 +222,10 @@ public class DialogueManager : MonoBehaviour {
 		//animator.SetBool("IsOpen", false); NÃO ESTÁ SENDO USADO
 
 		nameOfDialogueInExecution = null;
-	}
+
+        //Verifica se é pra ativar ou desativar o Action Map "Dialogue" do Input de acordo com o status do diálogo
+        playerCheckDialogue.CheckInputActionsMaps();
+    }
 
 
 	public bool DialogueIsRunning()

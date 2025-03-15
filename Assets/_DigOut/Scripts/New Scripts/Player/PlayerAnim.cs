@@ -6,7 +6,8 @@ public class PlayerAnim : MonoBehaviour
 {
 
     
-    private PlayerInput input;
+    private PlayerInputHandler input;
+    private PlayerMove move;
     private Animator anim;
     private PlayerJump jump;
     private CheckPlayerGround ground;
@@ -19,7 +20,8 @@ public class PlayerAnim : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<Animator>();  
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerInputHandler>();
+        move = GetComponent<PlayerMove>(); 
         ground = GetComponent<CheckPlayerGround>();
         jump = GetComponent<PlayerJump>();
         meditation = GetComponent<Meditation>();
@@ -37,7 +39,8 @@ public class PlayerAnim : MonoBehaviour
     {
         if (!checkDialogue.dialogue.DialogueIsRunning())
         {
-            anim.SetFloat("Speed", Mathf.Abs(input.HorizontalInput()));
+            //anim.SetFloat("Speed", Mathf.Abs(input.HorizontalInput()));
+            anim.SetFloat("Speed", Mathf.Abs(move.GetHorizontalValue()));
         }
         else
         {

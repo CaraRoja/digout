@@ -10,6 +10,7 @@ public class CoinManager : MonoBehaviour
     public float floatCoin = 100f;
     public float coinPickupValue = 5f;
     public float coinLoseTimeValue;
+    public float coinGainTimeValue;
     public bool isCoinWorking = true;
 
     private DialogueManager dialogue;
@@ -66,20 +67,22 @@ public class CoinManager : MonoBehaviour
 
     public void AddCoins()
     {
+        
         floatCoin += coinPickupValue;
         coins = Mathf.FloorToInt(floatCoin);
 
     }
-    public void AddCoins(float value)
+    public void AddCoinsWithTime()
     {
-        floatCoin += value;
+        floatCoin = Mathf.MoveTowards(floatCoin, 100f, coinGainTimeValue * Time.deltaTime);
+        //floatCoin += value;
         coins = Mathf.FloorToInt(floatCoin);
 
     }
 
     public void LoseCoinsInTime(float time)
     {
-        if (isCoinWorking)
+        if (isCoinWorking  && !dialogue.DialogueIsRunning())
         {
             floatCoin = Mathf.MoveTowards(floatCoin, 0f, time * Time.deltaTime);
             coins = Mathf.FloorToInt(floatCoin);
@@ -88,14 +91,8 @@ public class CoinManager : MonoBehaviour
 
     public void SetCoinStatusWorking(bool status)
     {
-        if (dialogue.DialogueIsRunning())
-        {
-            isCoinWorking = false;
-        }
-        else
-        {
-            isCoinWorking = status;
-        }
+
+        isCoinWorking = status;
         
     }
 

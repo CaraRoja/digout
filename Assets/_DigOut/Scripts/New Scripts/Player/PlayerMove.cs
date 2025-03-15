@@ -13,7 +13,7 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     public bool rightDirection = true;
 
-    private PlayerInput input;
+    private PlayerInputHandler input;
     private CheckPlayerGround playerGround;
     private Meditation meditation;
     private PlayerCoin playerCoin;
@@ -27,7 +27,7 @@ public class PlayerMove : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         playerGround = GetComponent<CheckPlayerGround>();
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerInputHandler>();
         meditation = GetComponent<Meditation>();
         playerCoin = GetComponent<PlayerCoin>();
         checkDialogue = GetComponent<PlayerCheckDialogue>();
@@ -48,13 +48,22 @@ public class PlayerMove : MonoBehaviour
     {
         if (!meditation.PlayerIsMeditating() && !checkDialogue.dialogue.DialogueIsRunning())
         {
-            horizontalMovement = input.HorizontalInput();
             this.body.velocity = new Vector2(horizontalMovement * speed, this.body.velocity.y);
         }
         else
         {
             this.body.velocity = new Vector2(0f, this.body.velocity.y);
         }
+    }
+
+    public float GetHorizontalValue()
+    {
+        return horizontalMovement;
+    }
+
+    public float SetHorizontalValue(Vector2 input)
+    {
+        return horizontalMovement = input.x;
     }
 
     public void ChangeDirection()

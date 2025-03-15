@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
 
-    private PlayerInput input;
+    private PlayerInputHandler input;
     private CheckPlayerGround ground;
     private PlayerMove player;
     private PlayerCoin playerCoin;
@@ -24,7 +24,7 @@ public class PlayerJump : MonoBehaviour
     void Start()
     {
         playerCoin = GetComponent<PlayerCoin>();
-        input = GetComponent<PlayerInput>();
+        input = GetComponent<PlayerInputHandler>();
         ground = GetComponent<CheckPlayerGround>();
         player = GetComponent<PlayerMove>();
         meditation = GetComponent<Meditation>();
@@ -35,12 +35,12 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         UpdateJumpForce();
-        Jump();
+        //Jump();
     }
 
     public void Jump()
     {
-        if (input.JumpInput() && ground.IsGrounded() && !isJumping && !meditation.PlayerIsMeditating() && !checkDialogue.dialogue.DialogueIsRunning())
+        if (ground.IsGrounded() && !isJumping && !meditation.PlayerIsMeditating() && !checkDialogue.dialogue.DialogueIsRunning())
         {
             isJumping = true;
             player.body.velocity = new Vector2(player.body.velocity.x, jumpForce);

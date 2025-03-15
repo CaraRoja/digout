@@ -949,6 +949,7 @@ GameObject:
   - component: {fileID: 3896036167472557624}
   - component: {fileID: 2896211201719585089}
   - component: {fileID: 8874715395856598162}
+  - component: {fileID: 5420726078080309036}
   - component: {fileID: 3564717594865437485}
   - component: {fileID: 8162288895162518503}
   - component: {fileID: 6094323162413975676}
@@ -1108,6 +1109,76 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5333824, y: 1.0546758}
   m_EdgeRadius: 0
+--- !u!114 &5420726078080309036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6825461469848323057}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 17f819d5425327c4a8812ebdcc23b1df, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6825461469848323057}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3c48ceab-5f57-4ae3-a2a0-4c55892cf421
+    m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3cf72e54-3af5-4220-b75c-d2a9acdd942d
+    m_ActionName: Player/Move[/Keyboard/a,/Keyboard/d,/Keyboard/leftArrow,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f697b044-7a7c-4c6f-afc1-fbdb21cb55c6
+    m_ActionName: Player/Meditate[/Keyboard/m]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3b7a4e39-e7e3-4b27-9ae5-88c279987d0a
+    m_ActionName: Player/SolveProblem[/Keyboard/leftShift,/Keyboard/rightShift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c448513-7bc5-4808-b811-74c536a72a96
+    m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 55eb9ffe-98a8-4cdb-8a32-a2fb7f588c16
+    m_ActionName: Player/SolveProblemLeft[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f7d9d96f-4be1-4d6e-b2e3-c0e9532fcec9
+    m_ActionName: Player/SolveProblemRight[/Keyboard/e]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!114 &3564717594865437485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1231,6 +1302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coin: {fileID: 0}
+  dialogue: {fileID: 0}
   pickedCoin: 0
 --- !u!114 &2809538192983691621
 MonoBehaviour:
@@ -1244,7 +1316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef41661c3f48c854692c182cf5b9cd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 0}
   dialogue: {fileID: 0}
+  meditation: {fileID: 0}
+  collided: 0
 --- !u!1 &8113407861807388565
 GameObject:
   m_ObjectHideFlags: 0
